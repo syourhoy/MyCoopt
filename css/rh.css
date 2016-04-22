@@ -1,0 +1,36 @@
+@font-face {
+  font-family: font_wow;
+  src: url('../asset/font/extia.otf');
+}
+body {
+	margin: 0;
+	font-family: "font_wow";
+}
+.carddemoBasicUsage .card-media {
+  background-color: #999999; }
+
+md-card {
+	background: rgba(250, 250, 250, 1);;
+	color: black;
+}
+
+md-card.md-default-theme md-card-title md-card-title-text:not(:only-child) .md-subhead, md-card md-card-title md-card-title-text:not(:only-child) .md-subhead {
+color: #F26e27;
+}
+
+md-card md-card-title md-card-title-media .md-media-lg {
+	height: 180px;
+	width: 152px;
+}
+
+.carddemoBasicUsage .card-media {
+background-color: rgba(188, 15, 19, 1);
+}
+
+#cooptant_card {
+
+}
+
+#coopte_card {
+
+}

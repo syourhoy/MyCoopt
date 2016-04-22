@@ -1,0 +1,30 @@
+#cooptes {
+    width: 600px;
+}
+
+#cooptes * {
+    margin-left: 10px;
+}
+
+#commend {
+    word-wrap: break-word;
+    width: 350px;
+    font-style: italic;
+}
+
+#buttonAdd {
+    color: white;
+    background-color: #394147;
+}
+
+#cardButtonAdd {
+    background: #394147;
+}
+
+#buttonAdd:not([disabled]):hover {
+    background-color: rgba(0,0,0,0);
+}
+
+#cardButtonAdd:not([disabled]):hover {
+    background-color: #35a9e4;
+}

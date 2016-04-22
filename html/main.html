@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Progress Button Styles: Creative effects for loading buttons" />
+        <meta name="keywords" content="progress button, loading button, 3d, loading indicator, progress indicator" />
+	<link rel="icon" href="../asset/img/extia.ico" />
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel='stylesheet prefetch' href='../css/angular-material.min.css'>
+	<link rel="stylesheet" type="text/css" href="../css/cooptant.css">
+	<link rel="stylesheet" type="text/css" href="../css/stat.css">
+	<link rel="stylesheet" type="text/css" href="../css/template_admin.css">
+	<link rel="stylesheet" type="text/css" href="../css/template_compte.css">
+	<link rel="stylesheet" type="text/css" href="../css/template_rh.css">
+    <script src="../js/jsapi.js"></script>
+
+     <!-- NOTIFICATION -->
+      <link rel="stylesheet" type="text/css" href="../css/angular-ui-notification.min.css">
+    
+</head>
+<body ng-app="MyApp" ng-controller="Header" onload="test()">
+
+	<div id="header" ng-cloak="">
+		<div ng-cloak="" class="gridListdemoBasicUsage">
+
+			<md-grid-list md-cols="10" md-row-height="10:9">
+ 				<md-grid-tile class="avatar">
+ 					<img id="img" alt="avatar" src="{{ img }}" id="avatar_img">
+				</md-grid-tile>
+			</md-grid-list>
+
+		</div>
+
+		<div id="user_info">
+			<h1>{{ prenom }} {{ nom }}</h1>
+			<h2>{{ titre }}</h2>
+			<h3>Niveau {{ level }}</h3>
+			<md-progress-linear md-mode="determinate" value="{{ xp }}" id="level_bar"></md-progress-linear>
+		</div>
+
+        <md-button id="deco_img" style="background:#394147" ng-click="notification()">Notification {{notif}}</md-button>
+		<md-button id="deco_img" style="background:#394147" ng-click="deconnexion()">
+			Deconnexion
+		</md-button>
+	</br>
+
+	</div>
+
+		<div ng-cloak="" class="tabsdemoDynamicHeight">
+	  <md-content>
+          <md-tabs md-dynamic-height="" md-border-bottom="" md-swipe-content md-stretch-tabs="always">                                                                                                                                              <md-tab label="Cooptant" data-ng-if="role === '2' || role === '3'">                                                                                              
+                <md-content class="md-padding" cooptant>
+                </md-content>                                                                                                        	 </md-tab>                                                                                                                                                                                                                                     
+              <md-tab label="RH" data-ng-if="role === '2'">                                                                                                                                                                                                                                            
+                <md-content class="md-padding" rh>                                                                                                                                                                                                                               
+                </md-content>                                                                                                                                                                                                                                                 
+              </md-tab>                                                                                                                                                                                                                                        
+              <md-tab label="Admin" ng-if="role == '1'">                                                                                                                                                                                                                                          
+                <md-content class="md-padding" admin>                                                                                                                                                                                                                               
+                </md-content>                                                                                                         
+              </md-tab>
+              
+                <md-tab label="Stats" ng-if="role == '1'">                                                                                                                                                                                                                                          
+                  <md-content class="md-padding" stats>                                                                                                                                                                                                                        
+		    		    
+                </md-content>                                                                                                         
+              </md-tab>
+              
+                <md-tab label="Mon compte" ng-if="role == '2' || role == '3'">                                                                                                                                                                                                                                          
+                <md-content class="md-padding" compte>                                                                                                                                                                                          </md-content>                                                                                                         
+              </md-tab>
+
+              </md-tabs>
+
+        
+	  </md-content>
+	</div>
+
+	<script src='../js/angular.min.js'></script>
+	<script src='../js/angular-animate.min.js'></script>
+	<script src='../js/angular-aria.min.js'></script>
+	<script src='../js/angular-messages.min.js'></script>
+    <script src='../js/angular-material.min.js'></script>
+    <script src="../js/jquery.min.js"></script>
+      <script src="../js/stats_cam.js"></script>
+      <!-- ADMIN -->
+      <script src="../js/pdf.js"></script>
+      <script src="../js/pdf.worker.js"></script>
+      <script src="../js/ng-pdfviewer.js"></script>
+      <script src="../js/main.js"></script>
+      
+    <!-- NOTIFICATION -->
+    <script src="../js/angular-ui-notification.min.js"></script>
+ 
+
+    </body>
+</html>

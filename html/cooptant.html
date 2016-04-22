@@ -1,0 +1,18 @@
+<div ng-controller="ctrlCooptee" layout="column" layout-align="center center">
+    <md-card id="cardButtonAdd">
+        <md-button id="buttonAdd" ng-click="addCoopte()">Ajouter coopte</md-button>
+    </md-card>
+    <md-card ng-repeat="coopte in cooptes" id="cooptes">
+        <br>
+        <span class="md-headline">{{coopte.lastname}} {{coopte.firstname}}</span>
+        <span>{{coopte.genre == "M" ? "Homme" : "Femme"}}</span>
+        <br>
+        <span>{{coopte.student === "1" ? coopte.genre === "M" ? "Etudiant," : "Etudiante," : ""}}{{coopte.origin}} {{coopte.fromm !== "" ? "&agrave; " + coopte.fromm : ""}}</span>
+        <br>
+        <div id="commend">{{coopte.commend !== "" ? '"' + coopte.commend + '"' : ""}}</div>
+        <br>
+        <md-card style="text-align: center; background-color: #394147; color: white; border-radius: 5px">
+            <span>Ton coopt&eacute; {{coopte.firstname}} correspond &agrave; notre cible, nous l'appelons dans les meilleurs d&eacute;lais</span>
+        </md-card>
+    </md-card>
+</div>

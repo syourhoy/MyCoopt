@@ -1,0 +1,128 @@
+  			@font-face {
+			  font-family: font_wow;
+			  src: url('../police/extia.otf');
+			}
+  			video#bgvid {
+			    position: fixed;
+			    top: 50%;
+			    left: 50%;
+			    min-width: 100%;
+			    min-height: 100%;
+			    width: auto;
+			    height: auto;
+			    z-index: -100;
+			    -moz-transform: translateX(-50%) translateY(-50%);
+			    -webkit-transform: translateX(-50%) translateY(-50%);
+			    transform: translateX(-50%) translateY(-50%);
+			    background: fixed;
+			    background: rgba(0,0,0,0.5);
+			}
+			.grayscale video {
+        		filter: brightness(.5);
+		        -webkit-filter: brightness(.5);
+		        -moz-filter: brightness(.5);
+		        -o-filter: brightness(.5);
+		       -ms-filter: brightness(.5);
+			}
+			body {
+				color: #FFF;
+				margin: 0;
+				font-family: "Gotham Rounded A",Verdana,sans-serif;
+				font-style: normal;
+			}
+			.round-button {
+				width:25%;
+
+			}
+			.erreur {
+			    color: #35a9e4;
+			}
+			.round-button-circle1 {
+				width: 60%;
+				height:0;
+				padding-bottom: 60%;
+			    border-radius: 50%;
+				border:6px solid white;
+			    overflow:hidden;
+			    margin-top: 28%;
+			  	margin-left: 100%;
+			    opacity: 0.8;
+			    background: #F26e27;
+			    box-shadow: 0 0 3px gray;
+
+			}
+			.round-button-circle1:hover {
+				opacity: 1;
+			}
+			.round-button-circle2:hover {
+				opacity: 1;
+			}
+			.round-button-circle2 {
+				width: 60%;
+				height: 0;
+				padding-bottom: 60%;
+			    border-radius: 50%;
+				border:6px solid white;
+			    overflow:hidden;
+			    opacity: 0.8;
+			    margin-top: -63%;
+				margin-left: 238%;
+				float: left;
+			    background: #F26e27; 
+			    box-shadow: 0 0 3px gray;
+			}
+			.round-button span {
+			    display:block;
+				float:left;
+				width:100%;
+				padding-top:50%;
+			    padding-bottom:50%;
+				line-height:1em;
+				margin-top:auto;
+
+				text-align:center;
+				color:#e2eaf3;
+			    font-family: "Gotham Rounded A",Verdana,sans-serif;
+			    font-size:1.2em;
+			    font-weight:bold;
+			    text-decoration:none;
+			}
+			#intro{
+				background:url() 30% 0 no-repeat fixed;
+				width: auto;
+				margin: 0 auto;
+			}
+
+			#second{
+				background: white 50% 0 no-repeat fixed;
+				color: white;
+				width: auto;
+				margin: auto;
+				position: relative;
+			}
+			button:focus {outline:0;}
+
+			button.active {outline:0;}
+			.modal-content  {
+				margin-top: 48%;
+			}
+			button:hover {
+			-moz-box-shadow: 0px 2px 9px 0px #F26e27;
+			-webkit-box-shadow: 0px 2px 9px 0px #F26e27;
+			-o-box-shadow: 0px 2px 9px 0px #F26e27;
+			box-shadow: 0px 2px 9px 0px #F26e27;
+			filter:progid:DXImageTransform.Microsoft.Shadow(color=#F26e27, Direction=180, Strength=9);
+			}
+			hr {
+				display: block;
+			    height: 1px;
+			    border: 0;
+			    border-top: 1px solid #F26e27;
+			    margin: 1em 0;
+			    padding: 0; 
+				-moz-box-shadow: 0px 2px 9px 0px #F26e27;
+				-webkit-box-shadow: 0px 2px 9px 0px #F26e27;
+				-o-box-shadow: 0px 2px 9px 0px #F26e27;
+				box-shadow: 0px 2px 9px 0px #F26e27;
+				filter:progid:DXImageTransform.Microsoft.Shadow(color=#F26e27, Direction=180, Strength=9);
+			}

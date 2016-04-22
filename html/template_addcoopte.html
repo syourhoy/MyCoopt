@@ -1,0 +1,72 @@
+<md-dialog style="width: 600px">
+	<form>
+		<md-toolbar style="background: #F26e27">
+			<div class="md-toolbar-tools">
+				<h3 class="md-title" style="display: inline">Ajouter un nouveau coopte</h3>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="cancel()">
+					<md-icon md-svg-src="../asset/img/ic_close.svg" aria-label="Fermer">
+					</md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+
+		<md-dialog-content style="background:#394147">
+			<div class="md-dialog-content">
+
+				<md-input-container class="md-block">
+					<label style="color:white;">Nom</label>
+					<input style="border-color:white;color:white;" required="" name="lastname" ng-model="lastname">
+					<div ng-messages="projectForm.lastname.$error">
+						<div style="color:#35a9e4" ng-message="required">Entrez un nom valide</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label style="color:white;">Pr&eacute;nom</label>
+					<input style="border-color:white;color:white;" required="" name="firstname" ng-model="firstname">
+					<div ng-messages="projectForm.firstname.$error">
+						<div style="color:#35a9e4" ng-message="required">Entrez un pr&eacute;nom valide</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label style="color:white;">Genre</label>
+					<md-select name="genre" ng-model="genre" style="border-color:white;" >
+						<md-option selected="selected" value="M">Homme</md-option>
+						<md-option value="F">Femme</md-option>
+					</md-select>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label style="color:white;">Pourquoi {{genre === "M" ? "le" : "la"}} recommandez-vous ?</label>
+					<textarea style="border-color:white;color:white;" ng-model="commend" columns="1" md-maxlength="150" rows="5" required="">
+					</textarea>
+					<div ng-messages="projectForm.commend.$error">
+						<div style="color:#35a9e4" ng-message="required">Dites quelque mot</div>
+					</div>
+				</md-input-container>
+
+				<md-radio-group ng-model="student" style="color:white;">
+				<p>Jeune &eacute;tudiant{{genre == "M" ? "" : "e"}} ?</p>
+					<md-radio-button style="color:white;" value=1 style="display:inline" class="md-primary">Oui</md-radio-button>
+					<md-radio-button style="color:white;" value=0 style="margin-left: 20px;display:inline">Non</md-radio-button>
+				</md-radio-group>
+                <md-input-container ng-show="student" class="md-block" style="color:white;">
+                    <label style="color:white;">{{student == false ? "Soci&eacute;t&eacute;" : "&Eacute;cole"}} d'origine ?</label>
+                    <input style="border-color:white;color:white;" name="fromm" ng-model="fromm">
+                </md-input-container>
+                
+                <md-input-container class="md-block" style="color:white;border-color:white">
+                    <label style="color:white;">Sur quel poste ou m&eacute;tier se positionne t'{{genre === "M" ? "il" : "elle"}} ?</label>
+                    <input style="border-color:white;color:white;" name="poste" ng-model="origin">
+                </md-input-container>
+		</div>	
+		</md-dialog-content>
+        <md-dialog-actions layout="row" style="color:black;">
+            <md-button ng-disabled="!firstname || !lastname || !commend || !fromm || !origin" ng-click="valider();">Ajouter</md-button>
+            <md-button ng-click="cancel()">Annuler</md-button>
+        </md-dialog-actions>
+	</form>
+</md-dialog>
+

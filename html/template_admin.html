@@ -1,0 +1,31 @@
+<div ng-controller="ctrlAdmin" layout="column" layout-align="center center">
+  <md-input-container style="width:300px">
+    <label style="color:#394147;">Entrez un login de cooptant</label>
+    <input id="search" ng-model="cooptant">
+  </md-input-container>
+  <md-card id="cardButtonAdd">
+    <md-button id="buttonAdd" ng-click="addRH()">Assigner un responsable des ressources humaines</md-button>
+  </md-card>
+  {{erreur_cooptant}}
+  <md-card id="cardadmin" style="width: 600px;" ng-repeat="coopt in listCoopt">
+    <div style="display: inline">
+      <span>Cooptant: {{coopt.cooptant_lname.toUpperCase()}} {{coopt.cooptant_fname}}</span><br/><br>
+      <span>Cooptée: {{coopt.coopte_lname.toUpperCase()}} {{coopt.coopte_fname}}</span><br></br>
+      <span id="stepo">{{ coopt.origin }} a {{ coopt.fromm }}</span>
+    </div>
+   <center><md-button id="affcv" ng-click="showCV()" data="{{coopt.id}}">Afficher le CV</md-button></center><br>
+    <center><select id="select" ng-model="selectRH">
+      <option ng-selected="{{rh.id == selectRH}}"
+	      ng-repeat="rh in listRH"
+	      value="{{rh.id}}">
+	{{rh.lname}} {{rh.fname}}
+      </option>
+    </select></center><br>
+
+    <div align="column" style="text-align: center">
+      <md-button id="conf" ng-click="assignRH()" data="selectRH || coopt">Valider</md-button>
+      <md-button id="ref">Refuser</md-button>
+    </div>
+
+  </md-card>
+  </div>

@@ -1,0 +1,56 @@
+<md-dialog style="width: 600px">
+  <form name="mdpform">
+    <md-toolbar style="background: #F26e27">
+      <div class="md-toolbar-tools">
+	<h3 class="md-title" style="display: inline">Changer mdp</h3>
+	<span flex></span>
+	<md-button class="md-icon-button" ng-click="closemdp()">
+	  <md-icon md-svg-src="../asset/img/ic_close.svg" aria-label="Fermer">
+	  </md-icon>
+	</md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content style="background:#394147">
+      <div class="md-dialog-content">
+
+	<md-input-container class="md-block" style="color:white;">
+	  <label style="color:white;">Ancien mot de passe</label>
+	  <input type="password" style="border-color:white;color:white;" name="oldmdp" ng-model="oldmdp" required ng-minlength="1" ng-maxlength="25">
+	  <div ng-messages="mdpform.oldmdp.$error" style="color:#35a9e4" role="alert">
+	    <div ng-message="required" style="color:#35a9e4">Veuillez entrez votre mot de passe</div>
+	    <div ng-message="minlength" style="color:#35a9e4">Veuillez rentrez au moins 1 charactere</div>
+	    <div ng-message="maxlength" style="color:#35a9e4">Veuillez rentrez moins de 25 characteres !</div>
+	  </div>
+	</md-input-container>
+</br>
+	<md-input-container class="md-block" style="color:white;">
+	  <label style="color:white;">Nouveau mot de passe</label>
+	  <input type="password" style="border-color:white;color:white;" name="newmdp" ng-model="newmdp" required ng-minlength="1" ng-maxlength="25">
+	  <div ng-messages="mdpform.newmdp.$error" style="color:#35a9e4" role="alert">
+	    <div ng-message="required" style="color:#35a9e4">Veuillez entrez un nouveau mot de passe</div>
+	    <div ng-message="minlength" style="color:#35a9e4">Veuillez rentrez au moins 1 charactere</div>
+	    <div ng-message="maxlength" style="color:#35a9e4">Veuillez rentrez moins de 25 characteres !</div>
+	  </div>
+	</md-input-container>
+</br>
+	<md-input-container class="md-block" style="color:white;">
+	  <label style="color:white;">Confirmer mot de passe</label>
+	  <input type="password" style="border-color:white;color:white;" name="okmdp" ng-model="okmdp" required ng-minlength="1" ng-maxlength="25">
+	  <div ng-messages="mdpform.okmdp.$error" style="color:#35a9e4" role="alert">
+	    <div ng-message="required" style="color:#35a9e4">Veuillez confirmez votre mot de passe</div>
+	    <div ng-message="minlength" style="color:#35a9e4">Veuillez rentrez au moins 1 charactere</div>
+	    <div ng-message="maxlength" style="color:#35a9e4">Veuillez rentrez moins de 25 characteres !</div>
+	    <div ng-message="" style="color:#35a9e4"></div>
+	  </div>
+	</md-input-container>
+	
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" style="color:black;">
+      <span style="color:#35a9e4">{{ error_change_mdp }}</span>
+      <md-button ng-click="validemdp();" ng-disabled="!(!!oldmdp && !!newmdp  && !!okmdp)">Valider</md-button>
+      <md-button ng-click="closemdp()">Annuler</mcd-button>
+    </md-dialog-actions>
+  </form>
+  </md-dialog>

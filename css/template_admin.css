@@ -1,0 +1,50 @@
+#search {
+    color:#394147;
+    background:rgba(251, 251, 251, 0.9);
+    border-radius:5px;
+    border-color:#394147;
+}
+
+#cardadmin {
+    padding:10px;
+    color:#394147;
+    background:white;
+}
+
+#conf {
+    color:white;
+    background:#394147;
+}
+
+#conf:hover {
+    background:#F26e27;
+}
+
+#ref {
+    color:white;
+    background:#394147;
+}
+
+#ref:hover {
+    background:#F26e27;
+}
+
+#affcv {
+    width:40%;
+    color:white;
+    background:#394147;
+}
+
+#affcv:hover {
+    background:#35a9e4;
+}
+
+#select {
+    outline:0;
+    width:35%;
+    background:white;
+}
+
+#stepo {
+    font-style: italic;
+}

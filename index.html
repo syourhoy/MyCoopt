@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>                                          
+    <head>
+    	<title>Acceuil - Extia Cooptation</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+        <script src="js/move.js"></script>
+		<link href="css/acceuil.css" rel="stylesheet">
+    </head>
+    <body ng-app="index_app">
+  	<section class="grayscale">
+  		<video autoplay loop id="bgvid" controls muted>
+    		<source src="asset/video/kilix.webm">
+		</video>
+	</section>
+        
+    <div id="intro">
+        
+        <section class="logo">
+            <center>
+                <img src="asset/img/Logo_FINAL.png" alt="Extia" style="width:20%;margin-top:3%;background-size:cover;">
+		    	<h1 style="color:white;">- My Cooptation -</h1>
+            </center>
+        </section>
+        
+        <div class="round-button">
+            <button type="button" class="round-button-circle1" id="Connexion">
+                <span>Connexion</span>
+            </button>
+            
+            <div class="modal fade" id="Connexion_modal" role="dialog" style="" ng-controller="connexionCtrl">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button ng-click="connexionClose()" type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+				            <center>
+                                <h4 class="modal-title" style="color:#F26e27">
+                                    <img src="asset/img/Logo_FINAL.png" alt="Extia" style="width:20%;margin-left:9%;background-size:cover;">
+                                    <br>Connexion
+                                </h4>
+                            </center>
+				        </div>
+				        <div class="modal-body" style="background-color:#394147;">
+				            <center>
+                                <form>
+                                    <div>
+				                        <input ng-model="login" type="text" name="name" placeholder="Nom d'utilisateur" style="color:black;"/>
+				                    </div>
+				                    <br>
+				                    <div>
+				                        <input ng-model="password" type="password" name="pass" placeholder="Mot de Passe" style="color:black;"/>
+                                    </div>
+                                    <p class="erreur">{{etat}}</p>
+				                    <div>
+				                	   
+				                        <button class="btn btn-default" type="submit" style="outline: 0" ng-click="connexion()">
+                                            Connexion
+                                        </button>
+                                        <br>
+                                        <br>
+				                        <a href="" style="color:#F26e27">Mot de passe oublier? </br></a>
+				                    </div>
+				                </form>
+                            </center>
+				        </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="round-button-circle2" id="Inscription">
+            <span>Inscription</span>
+        </button>
+		    	<div class="modal fade" id="Inscription_modal" role="dialog" ng-controller="inscriptionCtrl">
+				    <div class="modal-dialog">
+				      <div class="modal-content" style="margin-top:5%;">
+				        <div class="modal-header">
+				          <button ng-click="closeInscription()" type="button" class="close" data-dismiss="modal">&times;</button>
+				            <center>
+                                <h4 class="modal-title" style="color:#F26e27">
+                                    <img src="asset/img/Logo_FINAL.png" alt="Extia" style="width:20%;margin-left:9%;background-size:cover;">
+                                    <br>Inscription
+                                </h4>
+                            </center>
+				        </div>
+				        <div class="modal-body" style="background-color:#394147;">
+				            <center>
+                                <form>
+				            	<br>
+				            	<p>Informations de connexions:</p>
+				                <br>
+				                <div>
+				                    <input type="text" name="login" placeholder="Nom d'utilisateur" style="color:black;" ng-model="login" required=""/>
+				                </div>
+				                <br>
+                                    <p class="erreur">{{erreur_login}}</p>
+				                <div>
+				                    <input type="text" name="mail" placeholder="Email"style="color:black;" ng-model="mail" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+				                </div>
+				                <br>
+                                    <p class="erreur">{{erreur_mail}}</p>
+				                <div>
+				                    <input type="password" name="pass" placeholder="Mot de passe"style="color:black;" ng-model="mdp" required=""/>
+				                </div>
+				                <br>
+				                <div>
+				                    <input type="password" name="cpass" placeholder="Confirmer le mot de passe"style="color:black;" required="" ng-model="mdp2"/>
+				                </div>
+                                    <p class="erreur">{{erreur_mdp}}</p>
+				                <br>
+				                <div>
+				                	<hr style="width:45%"></hr>
+				                    <p>Informations personnelles:</p>
+                                    <br>
+				                    <div>
+				                        <input type="text" name="fname" placeholder="Nom"style="color:black;" ng-model="fname" required=""/>
+				                    </div>
+				                    <br>
+				                    <div>
+				                        <input type="text" name="lname" placeholder="Prénom"style="color:black;" ng-model="lname" required=""/>
+                                    </div>
+				                    <br>
+				                    <div>
+				                      <select type="select" name="cpass" value="agence" style="color:black;outline: 0;" ng-model="agence" required="">
+							<option selected="selected" disabled>Selectionner une agence</option>
+                                          <option value=1>CGA</option>
+                                          <option value=2>BCH</option>
+                                          <option value=3>BRE</option>
+										  <option value=4>RHA</option>
+										  <option value=5>NPC</option>
+										  <option value=6>BXL</option>
+										  <option value=7>PACA</option>
+										  <option value=8>SUISSE</option>
+										  <option value=9>INTERNE</option>
+				                        </select>
+				                    </div>
+				                    <hr style="width:20%;"></hr>
+                                    <br>
+				                    <button class="btn btn-default" type="submit" style="outline: 0" ng-click="checkInscription()">
+                                         Valider
+                                    </button>
+                                    <br>
+                                    <br>
+				                </form>
+                            </center>
+				        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+        </div>
+        
+        <center>
+            <h3 style="margin-top:3%;color:white;">
+                La cooptation, qu'est-ce que c'est?
+            </h3>
+            <a href="#second">
+                <img src="asset/img/picto_landing_home.svg" style="width:5%;">
+            </a>
+            <br>
+            <br>
+        </center>
+    </div>
+	<div style="margin-top:10%;background-color:#394147" id="second">
+		<section style="display: inline-block;">
+			<img src="asset/img/copt1.jpg" style="width:40%;">
+			<a href="#intro"><img src="asset/img/up.png" style="width:5%;margin-left: 7.5%;position:bottom;"></a>
+			<img src="asset/img/copt2.jpg" style="width:40%;float:right;">
+		</section>
+	</div>
+	<script src="js/acceuil.js"></script>
+    </body>
+</html>

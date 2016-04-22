@@ -1,0 +1,27 @@
+<div ng-controller="ctrlStat">
+<center>
+    <h2 style="color:F26e27;">Statistiques</h2>
+    <div style="display:inline-block">
+        <input id="graph1" type="checkbox" ng-model="check_statut" Checked="checked"/>
+        <span style='color:#F26e27'>Par statut &nbsp;</span>
+    </div>
+    <div style="display:inline-block">
+        <input id="graph2" type="checkbox" ng-model="check_metier" checked/>
+        <span style="color:#F26e27">Par métier &nbsp;</span>
+    </div>
+    <div style="display:inline-block">
+        <input id="graph3" type="checkbox" ng-model="check_agence" checked/>
+        <label style="color:#F26e27">Par agence &nbsp;</label>
+    </div>
+    <section id="stat">
+       <div id="chart_div" style="display:inline-block;" ng-show="check_statut === true"></div>
+        <div id="chart_div2" style="display:inline-block;" ng-show="check_metier === true"></div><br>
+        <div id="chart_div3" style="display:inline-block;" ng-show="check_agence === true"></div>
+    </section>
+</center>
+<center>
+<md-button id="export" ng-click="printStat()" ng-disabled="check_statut != true && check_metier != true && check_agence != true">
+  EXPORTER EN PDF
+</md-button>
+</center>
+</div>

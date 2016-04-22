@@ -1,0 +1,32 @@
+<div ng-controller="ctrlRH" layout="column" layout-align="center center">
+    <md-card ng-repeat="coopte in listByRH" id="cooptes">
+        <br>
+        <span class="md-headline">{{coopte.lastname}} {{coopte.firstname}}</span>
+        <span>{{coopte.genre == "M" ? "Homme" : "Femme"}}</span>
+        <br>
+        <span>{{coopte.student === "1" ? coopte.genre === "M" ? "Etudiant," : "Etudiante," : ""}}  &nbsp; {{coopte.origin}} {{coopte.fromm !== "" ? "&agrave; " + coopte.fromm : ""}}</span>
+        <br>
+        <div id="commend">{{coopte.commend !== "" ? '"' + coopte.commend + '"' : ""}}</div>
+        <br>
+        <div layout="row">
+        <md-select ng-model="selectJobs" ng-init="selectJobs=coopte.job">
+            <md-option ng-repeat="job in listJobs"
+                    value="{{job.id}}">
+                    {{job.name}}
+            </md-option>
+        </md-select>
+        <md-select ng-model="selectStatuts" ng-init="selectStatuts=coopte.statut">
+            <md-option ng-repeat="statut in listStatuts"
+                    value="{{statut.id}}">
+                    {{statut.rh}}
+            </md-option>
+        </md-select>
+        <md-button id="chngstatu"  ng-click="upCoopte()">
+	  <div style="margin-left: 0%;">
+	    Changer
+	  </div>
+	</md-button>
+        </div>
+        <br>
+    </md-card>
+</div>
